@@ -1,0 +1,1586 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media Assistant | AI-Powered External Marketing Department</title>
+    <meta
+      name="description"
+      content="Media Assistant is an AI-powered external marketing department for growing businesses: strategy, execution, content, branding, websites, automation, and growth support from one coordinated team."
+    />
+    <style>
+      :root {
+        --primary: #193153;
+        --primary-2: #24456f;
+        --accent: #40b7ae;
+        --accent-soft: #e8f8f6;
+        --ink: #102033;
+        --muted: #637083;
+        --line: #dce5ef;
+        --surface: #ffffff;
+        --soft: #f6f9fc;
+        --soft-2: #eef5f7;
+        --shadow: 0 18px 50px rgba(25, 49, 83, 0.1);
+        --shadow-strong: 0 34px 92px rgba(25, 49, 83, 0.22);
+        --shadow-deep: 0 48px 130px rgba(15, 31, 54, 0.28);
+        --radius: 8px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 12% 2%, rgba(64, 183, 174, 0.16), transparent 28%),
+          radial-gradient(circle at 88% 8%, rgba(25, 49, 83, 0.12), transparent 30%),
+          linear-gradient(180deg, #ffffff 0%, #f7fafc 46%, #ffffff 100%);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+      }
+
+      body::before {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        content: "";
+        background:
+          linear-gradient(90deg, rgba(25, 49, 83, 0.035) 1px, transparent 1px),
+          linear-gradient(rgba(25, 49, 83, 0.025) 1px, transparent 1px);
+        background-size: 72px 72px;
+        mask-image: linear-gradient(to bottom, black, transparent 72%);
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      .nav {
+        position: sticky;
+        top: 0;
+        z-index: 30;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 14px clamp(20px, 5vw, 72px);
+        background: rgba(255, 255, 255, 0.88);
+        border-bottom: 1px solid rgba(220, 229, 239, 0.8);
+        box-shadow: 0 16px 50px rgba(25, 49, 83, 0.08);
+        backdrop-filter: blur(22px);
+      }
+
+      .nav::before {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        content: "";
+        background:
+          linear-gradient(90deg, rgba(64, 183, 174, 0.14), transparent 32%),
+          linear-gradient(270deg, rgba(25, 49, 83, 0.08), transparent 40%);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 15px;
+        font-weight: 800;
+        color: var(--primary);
+      }
+
+      .brand-mark,
+      .icon {
+        display: grid;
+        place-items: center;
+        flex: 0 0 auto;
+      }
+
+      .brand-mark {
+        width: 36px;
+        height: 36px;
+        color: #ffffff;
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        border-radius: var(--radius);
+        box-shadow: 0 12px 26px rgba(64, 183, 174, 0.28);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: clamp(14px, 2vw, 24px);
+        color: #526176;
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .nav-links a {
+        transition: color 180ms ease;
+      }
+
+      .nav-links a:hover {
+        color: var(--primary);
+      }
+
+      .button {
+        display: inline-flex;
+        min-height: 46px;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 0 18px;
+        border: 1px solid transparent;
+        border-radius: var(--radius);
+        font-size: 14px;
+        font-weight: 800;
+        transition:
+          transform 180ms ease,
+          box-shadow 180ms ease,
+          border-color 180ms ease,
+          background 180ms ease;
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+      }
+
+      .button.primary {
+        color: #ffffff;
+        background: linear-gradient(135deg, var(--primary), #214b7c);
+        box-shadow: 0 16px 34px rgba(25, 49, 83, 0.24);
+      }
+
+      .button.secondary {
+        color: var(--primary);
+        background: #ffffff;
+        border-color: var(--line);
+        box-shadow: 0 10px 28px rgba(25, 49, 83, 0.07);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 0.96fr) minmax(380px, 1.04fr);
+        gap: clamp(34px, 5vw, 76px);
+        align-items: center;
+        padding: clamp(56px, 7vw, 104px) clamp(20px, 5vw, 72px) clamp(54px, 6vw, 84px);
+        background:
+          linear-gradient(115deg, rgba(232, 248, 246, 0.9), transparent 36%),
+          radial-gradient(circle at 82% 24%, rgba(25, 49, 83, 0.1), transparent 34%),
+          linear-gradient(180deg, #ffffff, #f8fbfe);
+      }
+
+      .eyebrow,
+      .badge {
+        display: inline-flex;
+        width: fit-content;
+        align-items: center;
+        gap: 8px;
+        color: var(--primary);
+        background: var(--accent-soft);
+        border: 1px solid rgba(64, 183, 174, 0.28);
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 850;
+        text-transform: uppercase;
+      }
+
+      .eyebrow {
+        margin-bottom: 20px;
+        padding: 8px 12px;
+      }
+
+      .eyebrow::before {
+        width: 8px;
+        height: 8px;
+        content: "";
+        background: var(--accent);
+        border-radius: 999px;
+      }
+
+      h1 {
+        max-width: 820px;
+        color: var(--primary);
+        font-size: clamp(44px, 6.6vw, 82px);
+        line-height: 0.98;
+        letter-spacing: 0;
+      }
+
+      .lead {
+        max-width: 690px;
+        margin-top: 24px;
+        color: #516075;
+        font-size: clamp(18px, 2vw, 22px);
+        line-height: 1.6;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 34px;
+      }
+
+      .trust-strip {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 34px;
+      }
+
+      .trust-strip span {
+        padding: 10px 12px;
+        color: var(--primary);
+        background: rgba(255, 255, 255, 0.76);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: 0 10px 24px rgba(25, 49, 83, 0.06);
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .hero-visual {
+        position: relative;
+        min-height: 620px;
+      }
+
+      .hero-image {
+        position: absolute;
+        inset: 0 0 auto auto;
+        width: min(96%, 720px);
+        height: 620px;
+        overflow: hidden;
+        background: var(--soft);
+        border: 1px solid rgba(255, 255, 255, 0.92);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-deep);
+      }
+
+      .hero-image::after,
+      .media-frame::after,
+      .image-card::after {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        content: "";
+        background:
+          linear-gradient(135deg, rgba(25, 49, 83, 0.2), transparent 42%),
+          linear-gradient(0deg, rgba(16, 32, 51, 0.22), transparent 46%);
+      }
+
+      .hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .image-card,
+      .micro-card {
+        position: absolute;
+        overflow: hidden;
+        background: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.88);
+        border-radius: var(--radius);
+        box-shadow: 0 22px 64px rgba(15, 31, 54, 0.2);
+      }
+
+      .image-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .image-card.robot {
+        top: 24px;
+        left: -8px;
+        width: 150px;
+        height: 190px;
+      }
+
+      .image-card.content {
+        right: 28px;
+        bottom: -22px;
+        width: 170px;
+        height: 220px;
+      }
+
+      .micro-card {
+        padding: 16px;
+        color: var(--primary);
+        backdrop-filter: blur(18px);
+      }
+
+      .micro-card::before {
+        display: block;
+        width: 100%;
+        height: 100%;
+        margin-bottom: 0;
+        content: "";
+        background:
+          linear-gradient(135deg, rgba(64, 183, 174, 0.34), rgba(25, 49, 83, 0.12)),
+          rgba(255, 255, 255, 0.2);
+        border-radius: inherit;
+      }
+
+      .section {
+        padding: clamp(66px, 8vw, 104px) clamp(20px, 5vw, 72px);
+      }
+
+      .visual-band {
+        padding: clamp(54px, 7vw, 84px) clamp(20px, 5vw, 72px);
+        background: var(--primary);
+        color: #ffffff;
+        overflow: hidden;
+      }
+
+      .visual-band h2,
+      .visual-band .kicker {
+        color: #ffffff;
+      }
+
+      .visual-band p {
+        color: #d9e7ef;
+      }
+
+      .visual-system {
+        display: grid;
+        grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+        gap: clamp(26px, 5vw, 58px);
+        align-items: center;
+      }
+
+      .media-layers {
+        position: relative;
+        min-height: 430px;
+      }
+
+      .media-frame {
+        position: absolute;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: var(--radius);
+        box-shadow: 0 32px 90px rgba(0, 0, 0, 0.28);
+      }
+
+      .media-frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: saturate(0.72) grayscale(0.08) contrast(0.96) brightness(1.03);
+      }
+
+      .media-frame.large {
+        inset: 0;
+      }
+
+      .media-frame.large::after {
+        display: none;
+      }
+
+      .band {
+        background: linear-gradient(180deg, #ffffff, var(--soft));
+        border-block: 1px solid var(--line);
+      }
+
+      .section-header {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 28px;
+        margin-bottom: 34px;
+      }
+
+      .kicker {
+        margin-bottom: 12px;
+        color: var(--accent);
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h2 {
+        max-width: 800px;
+        color: var(--primary);
+        font-size: clamp(32px, 4.4vw, 58px);
+        line-height: 1.04;
+        letter-spacing: 0;
+      }
+
+      .section-header p {
+        max-width: 470px;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.65;
+      }
+
+      .grid {
+        display: grid;
+        gap: 16px;
+      }
+
+      .problem-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+        overflow: visible;
+        padding: 4px 2px;
+        border-top: 1px solid var(--line);
+      }
+
+      .card,
+      .problem-card,
+      .value-card,
+      .ai-card,
+      .audience-card {
+        background: #ffffff;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow:
+          0 1px 0 rgba(255, 255, 255, 0.8) inset,
+          0 14px 36px rgba(25, 49, 83, 0.07);
+        transition:
+          transform 180ms ease,
+          box-shadow 180ms ease,
+          border-color 180ms ease;
+      }
+
+      .card:hover,
+      .problem-card:hover,
+      .value-card:hover,
+      .ai-card:hover,
+      .audience-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(64, 183, 174, 0.56);
+        box-shadow: 0 22px 50px rgba(25, 49, 83, 0.12);
+      }
+
+      .problem-card {
+        display: grid;
+        grid-template-columns: 10px minmax(190px, 0.7fr) minmax(180px, 0.7fr) minmax(220px, 1fr);
+        gap: 18px;
+        align-items: start;
+        min-height: 0;
+        padding: 18px 0;
+        background: transparent;
+        border: 0;
+        border-bottom: 1px solid var(--line);
+        border-radius: 0;
+        box-shadow: none;
+        scroll-snap-align: unset;
+      }
+
+      .problem-card:hover {
+        transform: none;
+        border-color: var(--line);
+        box-shadow: none;
+      }
+
+      .icon {
+        width: 10px;
+        height: 10px;
+        margin-top: 7px;
+        margin-bottom: 0;
+        background: var(--accent);
+        border-radius: 999px;
+        color: transparent;
+        font-size: 0;
+      }
+
+      .problem-card h3,
+      .card h3,
+      .value-card h3,
+      .ai-card h3,
+      .audience-card h3 {
+        color: var(--primary);
+        font-size: 18px;
+        line-height: 1.25;
+      }
+
+      .problem-card p,
+      .card p,
+      .value-card p,
+      .ai-card p {
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      .solution {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: 0;
+        color: var(--primary);
+        font-size: 13px;
+        font-weight: 850;
+        line-height: 1.45;
+      }
+
+      .why-grid {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+      }
+
+      .card {
+        padding: 24px;
+      }
+
+      .card-label,
+      .outcome-tag {
+        display: inline-flex;
+        width: fit-content;
+        margin-bottom: 16px;
+        padding: 6px 10px;
+        color: var(--primary);
+        background: var(--accent-soft);
+        border: 1px solid rgba(64, 183, 174, 0.24);
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 850;
+      }
+
+      .rich-card {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .rich-card::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 120px;
+        height: 120px;
+        content: "";
+        background: radial-gradient(circle, rgba(64, 183, 174, 0.18), transparent 70%);
+      }
+
+      .section-showcase {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(300px, 0.7fr);
+        gap: 22px;
+        align-items: stretch;
+      }
+
+      .showcase-image {
+        min-height: 420px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.88);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-strong);
+      }
+
+      .showcase-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .model-wrap {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        gap: 22px;
+        align-items: start;
+      }
+
+      .tier-stack {
+        display: grid;
+        gap: 14px;
+      }
+
+      .tier {
+        padding: 24px;
+      }
+
+      .tier summary {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 16px;
+        align-items: center;
+        cursor: pointer;
+        list-style: none;
+      }
+
+      .tier summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .tier summary::after {
+        display: grid;
+        width: 34px;
+        height: 34px;
+        place-items: center;
+        content: "+";
+        color: var(--primary);
+        background: var(--accent-soft);
+        border-radius: var(--radius);
+        font-size: 22px;
+        font-weight: 600;
+      }
+
+      .tier[open] summary::after {
+        content: "-";
+      }
+
+      .tier-services {
+        display: grid;
+        gap: 10px;
+        margin: 18px 0 0;
+        padding: 0;
+        color: var(--muted);
+        list-style: none;
+        font-size: 14px;
+        line-height: 1.45;
+      }
+
+      .tier-services li {
+        display: grid;
+        grid-template-columns: 8px 1fr;
+        gap: 10px;
+      }
+
+      .tier-services li::before {
+        width: 8px;
+        height: 8px;
+        margin-top: 7px;
+        content: "";
+        background: var(--accent);
+        border-radius: 999px;
+      }
+
+      .tier.featured {
+        color: #ffffff;
+        background: linear-gradient(135deg, var(--primary), #235177);
+        border-color: var(--primary);
+      }
+
+      .tier.featured h3,
+      .tier.featured p {
+        color: #ffffff;
+      }
+
+      .tier.featured summary::after {
+        color: var(--primary);
+        background: #ffffff;
+      }
+
+      .tier.featured .tier-services {
+        color: #d9e7ef;
+      }
+
+      .badge {
+        margin-bottom: 14px;
+        padding: 6px 10px;
+      }
+
+      .compare {
+        overflow: hidden;
+        background: #ffffff;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      table {
+        width: 100%;
+        min-width: 0;
+        table-layout: fixed;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 12px 10px;
+        border-bottom: 1px solid var(--line);
+        text-align: left;
+        vertical-align: top;
+        overflow-wrap: anywhere;
+      }
+
+      th {
+        color: #ffffff;
+        background: var(--primary);
+        font-size: 11px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      td {
+        color: #526176;
+        font-size: 12px;
+        line-height: 1.45;
+      }
+
+      td strong {
+        color: var(--primary);
+      }
+
+      tbody tr:nth-child(even) td {
+        background: #f8fbfe;
+      }
+
+      .check {
+        color: var(--accent);
+        font-weight: 900;
+      }
+
+      .value-grid {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+      }
+
+      .value-card,
+      .ai-card,
+      .audience-card {
+        padding: 22px;
+      }
+
+      .review {
+        display: grid;
+        grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+        gap: 24px;
+        align-items: stretch;
+      }
+
+      .review-panel {
+        display: flex;
+        min-height: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: clamp(26px, 4vw, 42px);
+        background:
+          linear-gradient(135deg, rgba(64, 183, 174, 0.15), transparent 42%),
+          var(--primary);
+        border-radius: var(--radius);
+        color: #ffffff;
+        box-shadow: var(--shadow-strong);
+      }
+
+      .review-panel h2 {
+        color: #ffffff;
+      }
+
+      .review-panel p {
+        margin-top: 18px;
+        color: #d9e7ef;
+        font-size: 17px;
+        line-height: 1.65;
+      }
+
+      .review-panel .hero-actions {
+        width: 100%;
+      }
+
+      .review-panel .button {
+        width: 100%;
+      }
+
+      .audit-lists {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .review-visual {
+        position: relative;
+        min-height: 240px;
+        overflow: hidden;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+
+      .review-visual img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .review-visual::after {
+        position: absolute;
+        inset: 0;
+        content: "";
+        background:
+          linear-gradient(135deg, rgba(25, 49, 83, 0.18), transparent 42%),
+          linear-gradient(0deg, rgba(25, 49, 83, 0.28), transparent 54%);
+      }
+
+      .list-card {
+        padding: 24px;
+      }
+
+      .list {
+        display: grid;
+        gap: 10px;
+        margin: 16px 0 0;
+        padding: 0;
+        color: var(--muted);
+        list-style: none;
+        line-height: 1.45;
+      }
+
+      .list li {
+        display: grid;
+        grid-template-columns: 18px 1fr;
+        gap: 8px;
+      }
+
+      .list li::before {
+        width: 8px;
+        height: 8px;
+        margin-top: 8px;
+        content: "";
+        background: var(--accent);
+        border-radius: 999px;
+        color: var(--accent);
+        font-weight: 900;
+      }
+
+      .ai-section {
+        position: relative;
+        overflow: hidden;
+        color: #ffffff;
+        background-color: var(--primary);
+        background-image:
+          repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px 86px),
+          repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.04) 0 1px, transparent 1px 86px);
+      }
+
+      .ai-layout {
+        display: grid;
+        grid-template-columns: minmax(300px, 0.72fr) minmax(0, 1fr);
+        gap: 28px;
+        align-items: stretch;
+      }
+
+      .ai-portrait {
+        position: relative;
+        min-height: 680px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: var(--radius);
+        box-shadow: 0 34px 88px rgba(0, 0, 0, 0.24);
+      }
+
+      .ai-portrait img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .ai-portrait::after {
+        position: absolute;
+        inset: 0;
+        content: "";
+        background:
+          linear-gradient(180deg, transparent 18%, rgba(25, 49, 83, 0.66)),
+          linear-gradient(135deg, rgba(64, 183, 174, 0.22), transparent 48%);
+      }
+
+      .ai-note {
+        position: absolute;
+        right: 18px;
+        bottom: 18px;
+        left: 18px;
+        z-index: 1;
+        padding: 18px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: var(--radius);
+        backdrop-filter: blur(18px);
+      }
+
+      .ai-note strong {
+        display: block;
+        color: #ffffff;
+      }
+
+      .ai-note span {
+        display: block;
+        margin-top: 6px;
+        color: #d9e7ef;
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      .ai-section h2,
+      .ai-section .kicker {
+        color: #ffffff;
+      }
+
+      .ai-section .section-header p {
+        color: #d9e7ef;
+      }
+
+      .ai-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-content: stretch;
+      }
+
+      .ai-card {
+        display: grid;
+        grid-template-columns: 44px 1fr;
+        gap: 14px;
+        align-items: start;
+        min-height: 150px;
+        background: rgba(255, 255, 255, 0.075);
+        border-color: rgba(255, 255, 255, 0.18);
+        box-shadow:
+          0 1px 0 rgba(255, 255, 255, 0.12) inset,
+          0 18px 48px rgba(0, 0, 0, 0.16);
+      }
+
+      .ai-card:nth-child(3n + 1) {
+        background: rgba(64, 183, 174, 0.12);
+      }
+
+      .ai-card h3 {
+        color: #ffffff;
+      }
+
+      .ai-card p {
+        color: #d9e7ef;
+      }
+
+      .ai-card .icon {
+        width: 44px;
+        height: 44px;
+        margin: 0;
+        color: #ffffff;
+        background: rgba(64, 183, 174, 0.28);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: var(--radius);
+        font-size: 12px;
+        font-weight: 850;
+      }
+
+      .ai-card h3,
+      .ai-card p {
+        grid-column: 2;
+      }
+
+      .audience-grid {
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+      }
+
+      .audience-wrap {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 22px;
+        align-items: stretch;
+      }
+
+      .audience-photo {
+        min-height: 100%;
+        overflow: hidden;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-strong);
+      }
+
+      .audience-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .audience-card {
+        min-height: 132px;
+      }
+
+      .audience-card h3 {
+        font-size: 15px;
+      }
+
+      .audience-card {
+        display: grid;
+        grid-template-columns: 34px 1fr;
+        gap: 14px;
+        align-items: center;
+      }
+
+      .audience-card::before {
+        display: grid;
+        width: 34px;
+        height: 34px;
+        place-items: center;
+        content: "";
+        background:
+          linear-gradient(135deg, rgba(64, 183, 174, 0.24), rgba(25, 49, 83, 0.08)),
+          var(--accent-soft);
+        border: 1px solid rgba(64, 183, 174, 0.28);
+        border-radius: var(--radius);
+      }
+
+      .section-showcase .why-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .section-showcase .why-grid .card:last-child {
+        grid-column: 1 / -1;
+      }
+
+      .cta {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 28px;
+        align-items: center;
+        margin: clamp(26px, 5vw, 54px) clamp(20px, 5vw, 72px) clamp(54px, 7vw, 84px);
+        padding: clamp(30px, 5vw, 58px);
+        color: #ffffff;
+        background:
+          radial-gradient(circle at 12% 18%, rgba(64, 183, 174, 0.34), transparent 34%),
+          linear-gradient(135deg, #193153 0%, #24456f 58%, #40b7ae 140%);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-strong);
+      }
+
+      .cta h2 {
+        color: #ffffff;
+      }
+
+      .cta p {
+        max-width: 690px;
+        margin-top: 14px;
+        color: #d9e7ef;
+        font-size: 17px;
+        line-height: 1.6;
+      }
+
+      .cta .button {
+        color: var(--primary);
+        background: #ffffff;
+      }
+
+      .footer {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 28px clamp(20px, 5vw, 72px);
+        color: var(--muted);
+        border-top: 1px solid var(--line);
+        font-size: 14px;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(18px);
+        transition:
+          opacity 600ms ease,
+          transform 600ms ease;
+      }
+
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 1180px) {
+        .why-grid,
+        .value-grid,
+        .audience-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .ai-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .visual-system,
+        .section-showcase,
+        .audience-wrap {
+          grid-template-columns: 1fr;
+        }
+
+        .showcase-image,
+        .audience-photo {
+          min-height: 520px;
+        }
+      }
+
+      @media (max-width: 960px) {
+        .nav-links {
+          display: none;
+        }
+
+        .hero,
+        .model-wrap,
+        .review,
+        .ai-layout,
+        .cta {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-visual {
+          min-height: auto;
+        }
+
+        .hero-image,
+        .image-card.robot,
+        .image-card.content,
+        .micro-card {
+          position: relative;
+          width: 100%;
+        }
+
+        .hero-image {
+          height: min(620px, 92vw);
+        }
+
+        .image-card.robot,
+        .image-card.content,
+        .micro-card {
+          top: auto;
+          right: auto;
+          bottom: auto;
+          left: auto;
+          height: 220px;
+          margin-top: 12px;
+        }
+
+        .section-header {
+          display: block;
+        }
+
+        .section-header p {
+          margin-top: 14px;
+        }
+
+        .audit-lists {
+          grid-template-columns: 1fr;
+        }
+
+        .media-layers {
+          min-height: auto;
+        }
+
+        .media-frame.large,
+        .media-frame.tall,
+        .media-frame.small,
+        .floating-stat,
+        .insight-card {
+          position: relative;
+          inset: auto;
+          right: auto;
+          bottom: auto;
+          left: auto;
+          width: 100%;
+          height: 280px;
+          margin-top: 12px;
+        }
+
+        .floating-stat,
+        .insight-card {
+          height: auto;
+        }
+
+        .ai-portrait {
+          min-height: 520px;
+        }
+      }
+
+      @media (max-width: 620px) {
+        .nav {
+          padding: 14px 16px;
+        }
+
+        .brand {
+          font-size: 14px;
+        }
+
+        .nav .button {
+          display: none;
+        }
+
+        .hero,
+        .section,
+        .visual-band {
+          padding-inline: 16px;
+        }
+
+        h1 {
+          font-size: 42px;
+        }
+
+        .why-grid,
+        .value-grid,
+        .ai-grid,
+        .audience-grid,
+        .section-showcase .why-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .problem-card {
+          grid-template-columns: 10px 1fr;
+        }
+
+        .problem-card p,
+        .problem-card .solution {
+          grid-column: 2;
+        }
+
+        .section-showcase .why-grid .card:last-child {
+          grid-column: auto;
+        }
+
+        .cta {
+          margin-inline: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="nav">
+      <a class="brand" href="#home" aria-label="Media Assistant home">
+        <span class="brand-mark">MA</span>
+        <span>Media Assistant</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#home">Home</a>
+        <a href="#business-review">Business Review</a>
+        <a href="#services">Services</a>
+        <a href="#how-we-work">How We Work</a>
+        <a href="#who-we-help">Who We Help</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="button primary" href="#contact">Get Free Business Review</a>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="reveal">
+          <div class="eyebrow">Strategy + Execution + AI Efficiency</div>
+          <h1>AI-Powered Marketing Department</h1>
+          <p class="lead">
+            Strategy, content, branding, websites, automation, and growth support from one
+            coordinated team.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#contact">Get Free Business Review</a>
+            <a class="button secondary" href="#how-we-work">See How We Work</a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="hero-image">
+            <img
+              src="assets/team-office-site.jpg"
+              alt="Marketing team in a modern office planning business growth systems"
+            />
+          </div>
+          <div class="micro-card robot" aria-hidden="true"></div>
+          <div class="micro-card content" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <section class="visual-band">
+        <div class="visual-system">
+          <div class="reveal">
+            <div class="kicker">One coordinated operating system</div>
+            <h2>One Team. One Growth System.</h2>
+            <p class="lead">
+              A lean operating layer for visibility, trust, content, and growth systems.
+            </p>
+            <div class="trust-strip" aria-label="Integrated marketing system">
+              <span>Marketing leadership</span>
+              <span>Content operations</span>
+            </div>
+          </div>
+          <div class="media-layers reveal">
+            <div class="media-frame large">
+              <img src="assets/content-phone-site.jpg" alt="Mobile content workflow on a phone" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="blockers">
+        <div class="section-header reveal">
+          <div>
+            <div class="kicker">Core problem</div>
+            <h2>What Is Stopping Growth?</h2>
+          </div>
+          <p>
+            The most common blockers we solve first.
+          </p>
+        </div>
+        <div class="grid problem-grid">
+          <article class="problem-card reveal"><span class="icon">01</span><h3>Weak online presence</h3><p>Your credibility is hard to see.</p><div class="solution">We improve proof, profiles, and web presence.</div></article>
+          <article class="problem-card reveal"><span class="icon">02</span><h3>Unclear messaging</h3><p>Your offer is not simple enough.</p><div class="solution">We create one clear message system.</div></article>
+          <article class="problem-card reveal"><span class="icon">03</span><h3>No content strategy</h3><p>Content feels reactive.</p><div class="solution">We plan around goals and buying intent.</div></article>
+          <article class="problem-card reveal"><span class="icon">04</span><h3>Poor lead conversion</h3><p>Interest is not becoming action.</p><div class="solution">We improve pages, CTAs, and follow-up.</div></article>
+          <article class="problem-card reveal"><span class="icon">05</span><h3>Lack of trust</h3><p>Your proof is hidden or weak.</p><div class="solution">We structure authority and social proof.</div></article>
+          <article class="problem-card reveal"><span class="icon">06</span><h3>No marketing system</h3><p>There is no operating rhythm.</p><div class="solution">We install planning, production, and reporting.</div></article>
+        </div>
+      </section>
+
+      <section class="section band" id="why">
+        <div class="section-header reveal">
+          <div>
+            <div class="kicker">Positioning</div>
+            <h2>Why Businesses Choose Media Assistant</h2>
+          </div>
+          <p>
+            Senior strategy, practical execution, and one accountable team.
+          </p>
+        </div>
+        <div class="section-showcase">
+          <div class="grid why-grid">
+            <article class="card rich-card reveal"><span class="card-label">Growth priority</span><h3>Business-First Approach</h3><p>We focus on marketing work that supports real business outcomes.</p></article>
+            <article class="card rich-card reveal"><span class="card-label">Done with you</span><h3>Strategy + Execution</h3><p>We build, implement, measure, and refine.</p></article>
+            <article class="card rich-card reveal"><span class="card-label">Faster workflow</span><h3>AI-Augmented Speed</h3><p>Research and execution move faster through AI-supported systems.</p></article>
+            <article class="card rich-card reveal"><span class="card-label">Trust building</span><h3>Founder Visibility</h3><p>We help founders become recognizable voices in their industry.</p></article>
+            <article class="card rich-card reveal"><span class="card-label">Single owner</span><h3>One Partner, Not Multiple Freelancers</h3><p>One team. One strategy. One point of accountability.</p></article>
+          </div>
+          <div class="showcase-image reveal">
+            <img src="assets/founder-visibility-site.jpg" alt="Founder creating content for visibility and trust" />
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="services">
+        <div class="section-header reveal">
+          <div>
+            <div class="kicker">Service model</div>
+            <h2>How We Support Business Growth</h2>
+          </div>
+          <p>
+            Click each level to see what is included.
+          </p>
+        </div>
+        <div class="model-wrap">
+          <div class="tier-stack">
+            <details class="card tier reveal" open>
+              <summary><div><span class="badge">Level 01</span><h3>Brand Foundation</h3><p>Positioning, messaging, brand clarity, and a prioritized action plan.</p></div></summary>
+              <ul class="tier-services">
+                <li>Business review and growth diagnosis</li>
+                <li>Competitor and audience research</li>
+                <li>Positioning and value proposition</li>
+                <li>Messaging framework and content pillars</li>
+                <li>Prioritized action plan</li>
+              </ul>
+            </details>
+            <details class="card tier featured reveal">
+              <summary><div><span class="badge">Level 02</span><h3>Growth Engine</h3><p>Ongoing visibility, content, website improvements, and lead systems.</p></div></summary>
+              <ul class="tier-services">
+                <li>Monthly marketing planning</li>
+                <li>Social content and creative production</li>
+                <li>Website and conversion improvements</li>
+                <li>Basic lead funnel and follow-up system</li>
+                <li>Monthly reporting and optimization</li>
+              </ul>
+            </details>
+            <details class="card tier reveal">
+              <summary><div><span class="badge">Level 03</span><h3>Strategic Growth Partner</h3><p>Senior strategy, execution leadership, automation, and long-term support.</p></div></summary>
+              <ul class="tier-services">
+                <li>Full growth strategy and campaign planning</li>
+                <li>Advanced funnels, landing pages, and CRM workflows</li>
+                <li>Marketing automation and email systems</li>
+                <li>Founder visibility and authority building</li>
+                <li>Weekly strategy rhythm and priority support</li>
+              </ul>
+            </details>
+          </div>
+          <div class="compare reveal" aria-label="Service model comparison">
+            <table>
+              <thead>
+                <tr>
+                  <th>Growth support</th>
+                  <th>Brand Foundation</th>
+                  <th>Growth Engine</th>
+                  <th>Strategic Growth Partner</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>Business review and diagnosis</strong></td><td><span class="check">Included</span></td><td><span class="check">Included</span></td><td><span class="check">Included</span></td></tr>
+                <tr><td><strong>Positioning and messaging</strong></td><td>Core framework</td><td>Expanded and applied</td><td>Ongoing strategic refinement</td></tr>
+                <tr><td><strong>Brand identity direction</strong></td><td>Foundation</td><td>Content-ready system</td><td>Full growth brand system</td></tr>
+                <tr><td><strong>Content strategy</strong></td><td>Content pillars</td><td>Monthly plan and production</td><td>Campaign-led content engine</td></tr>
+                <tr><td><strong>Website and conversion support</strong></td><td>Audit and recommendations</td><td>Priority improvements</td><td>Landing pages, funnels, and optimization</td></tr>
+                <tr><td><strong>Lead generation systems</strong></td><td>Opportunity map</td><td>Basic funnel and follow-up</td><td>Advanced acquisition and automation</td></tr>
+                <tr><td><strong>AI-powered research and execution</strong></td><td>Research support</td><td>Workflow acceleration</td><td>Integrated operating system</td></tr>
+                <tr><td><strong>Marketing leadership</strong></td><td>Action plan</td><td>Monthly direction</td><td>Senior partner and accountability rhythm</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section band">
+        <div class="section-header reveal">
+          <div>
+            <div class="kicker">Client value</div>
+            <h2>What Clients Actually Get</h2>
+          </div>
+          <p>
+            Practical outcomes from one coordinated external team.
+          </p>
+        </div>
+        <div class="grid value-grid">
+          <article class="value-card reveal"><span class="outcome-tag">Less coordination</span><h3>Save Time</h3><p>Your team stops chasing scattered marketing tasks.</p></article>
+          <article class="value-card reveal"><span class="outcome-tag">Lower hiring load</span><h3>Reduce Cost</h3><p>Senior-level support without building a full department.</p></article>
+          <article class="value-card reveal"><span class="outcome-tag">More attention</span><h3>Increase Visibility</h3><p>Show up with clearer messaging and stronger content.</p></article>
+          <article class="value-card reveal"><span class="outcome-tag">Better priorities</span><h3>Improve Decisions</h3><p>Use research and performance insight to choose what matters.</p></article>
+          <article class="value-card reveal"><span class="outcome-tag">Sharper market fit</span><h3>Strengthen Positioning</h3><p>Make it easier for clients to trust and choose you.</p></article>
+          <article class="value-card reveal"><span class="outcome-tag">Repeatable system</span><h3>Generate Growth</h3><p>Turn strategy and execution into a growth engine.</p></article>
+        </div>
+      </section>
+
+      <section class="section" id="business-review">
+        <div class="review">
+          <div class="review-panel reveal">
+            <div class="kicker">Business review system</div>
+            <h2>Business Review System</h2>
+            <p>
+              Before we recommend channels or campaigns, we diagnose what is happening
+              across your brand, market position, website, reputation, and lead process.
+              The result is a consulting-grade growth map, not a generic sales pitch.
+            </p>
+            <div class="hero-actions">
+              <a class="button secondary" href="#contact">Get Free Business Review</a>
+            </div>
+          </div>
+          <div class="audit-lists">
+            <div class="review-visual reveal">
+              <img src="assets/mobile-audience-site.jpg" alt="Client behavior research through mobile content and attention signals" />
+            </div>
+            <article class="card list-card reveal">
+              <h3>What We Audit</h3>
+              <ul class="list">
+                <li>Brand Identity</li>
+                <li>Positioning</li>
+                <li>Website Performance</li>
+                <li>Social Media Presence</li>
+                <li>Online Reputation</li>
+                <li>Lead Generation Process</li>
+                <li>Competitor Landscape</li>
+              </ul>
+            </article>
+            <article class="card list-card reveal">
+              <h3>What Clients Receive</h3>
+              <ul class="list">
+                <li>Growth diagnosis</li>
+                <li>Competitor analysis</li>
+                <li>Opportunity map</li>
+                <li>Prioritized action plan</li>
+                <li>Recommended next steps</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section ai-section" id="how-we-work">
+        <div class="section-header reveal">
+          <div>
+            <div class="kicker">AI-powered execution</div>
+            <h2>AI-Powered Marketing Execution</h2>
+          </div>
+          <p>
+            AI enhances the work of experienced strategists, creatives, and operators.
+            It helps us research faster, produce smarter, and keep human judgment where it matters.
+          </p>
+        </div>
+        <div class="ai-layout">
+          <div class="ai-portrait reveal">
+            <img src="assets/ai-robot-site.jpg" alt="AI robotics visual representing augmented marketing workflows" />
+            <div class="ai-note">
+              <strong>AI is the acceleration layer.</strong>
+              <span>People still lead strategy, judgment, quality, brand voice, and client accountability.</span>
+            </div>
+          </div>
+          <div class="grid ai-grid">
+            <article class="ai-card reveal"><span class="icon">01</span><h3>Market Research</h3><p>Faster insight into trends, demand signals, and growth opportunities.</p></article>
+            <article class="ai-card reveal"><span class="icon">02</span><h3>Competitor Analysis</h3><p>Structured review of competitor positioning, content, offers, and gaps.</p></article>
+            <article class="ai-card reveal"><span class="icon">03</span><h3>Audience Research</h3><p>Sharper understanding of pain points, objections, motivations, and buying intent.</p></article>
+            <article class="ai-card reveal"><span class="icon">04</span><h3>Content Strategy</h3><p>Content pillars and campaign plans connected to business priorities.</p></article>
+            <article class="ai-card reveal"><span class="icon">05</span><h3>Content Creation</h3><p>More efficient copy, creative, repurposing, and production workflows.</p></article>
+            <article class="ai-card reveal"><span class="icon">06</span><h3>Brand Messaging</h3><p>Clearer language, stronger value propositions, and consistent communication.</p></article>
+            <article class="ai-card reveal"><span class="icon">07</span><h3>Marketing Automation</h3><p>Smarter lead follow-up, CRM workflows, email sequences, and internal systems.</p></article>
+            <article class="ai-card reveal"><span class="icon">08</span><h3>Performance Analysis</h3><p>Regular review of what is working, what is not, and what to improve next.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="who-we-help">
+        <div class="section-header reveal">
+          <div>
+            <div class="kicker">Target audience</div>
+            <h2>Who We Work With</h2>
+          </div>
+          <p>
+            For ambitious businesses that need a coordinated marketing partner.
+          </p>
+        </div>
+        <div class="audience-wrap">
+          <div class="grid audience-grid">
+            <article class="audience-card rich-card reveal"><h3>Small and medium businesses</h3></article>
+            <article class="audience-card rich-card reveal"><h3>Founders and business owners</h3></article>
+            <article class="audience-card rich-card reveal"><h3>Consultants and coaches</h3></article>
+            <article class="audience-card rich-card reveal"><h3>Service-based businesses</h3></article>
+            <article class="audience-card rich-card reveal"><h3>Content creators and influencers</h3></article>
+            <article class="audience-card rich-card reveal"><h3>Local businesses</h3></article>
+            <article class="audience-card rich-card reveal"><h3>Growing startups</h3></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta reveal" id="contact">
+        <div>
+          <h2>Ready to Find Out What's Holding Your Business Back?</h2>
+          <p>
+            Get a free business review and discover the highest-impact opportunities for growth.
+          </p>
+        </div>
+        <a class="button" href="mailto:hello@mediaassistant.ai?subject=Free%20Business%20Review">Get Free Business Review</a>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <a class="brand" href="#home">
+        <span class="brand-mark">MA</span>
+        <span>Media Assistant</span>
+      </a>
+      <span>(c) 2026 Media Assistant. AI-powered external marketing department.</span>
+    </footer>
+
+    <script>
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+
+      document.querySelectorAll(".reveal").forEach((element, index) => {
+        element.style.transitionDelay = `${Math.min(index % 6, 5) * 45}ms`;
+        observer.observe(element);
+      });
+    </script>
+  </body>
+</html>
